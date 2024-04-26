@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //const API_BASE_URL = 'http://localhost:5000/api/users';
-const API_BASE_URL = 'https://ecommerce-lac-iota.vercel.app/api/users';
+const API_BASE_URL = 'https://ecommerce-1vhq.onrender.com/users';
 
 export const register = async (name, email, password) => {
   const response = await axios.post(`${API_BASE_URL}/register`, {

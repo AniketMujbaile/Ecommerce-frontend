@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from './auth';
 
 //const API_BASE_URL = 'http://localhost:5000/api';
-const API_BASE_URL = 'https://ecommerce-lac-iota.vercel.app/api';
+const API_BASE_URL = 'https://ecommerce-1vhq.onrender.com/api';
 
 
 export const getAllProducts = async () => {
@@ -56,7 +56,7 @@ export const removeFromCart = async (cartItemId) => {
         'x-auth-token': token,
       },
     });
-    console.log('Server response:', response.data); 
+   // console.log('Server response:', response.data); 
     return response.data;
   } catch (error) {
     console.error('Error removing item from cart:', error);

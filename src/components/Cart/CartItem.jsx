@@ -6,10 +6,10 @@ const CartItem = ({ item, onRemoveItem, onUpdateQuantity }) => {
 
   const handleQuantityChange = async (e) => {
     const newQuantity = parseInt(e.target.value);
-    setQuantity(newQuantity); 
+    setQuantity(newQuantity);  
     try {
       await updateCartItemQuantity(item._id, newQuantity);
-      onUpdateQuantity(item._id, newQuantity); 
+      onUpdateQuantity(item._id, newQuantity);  
     } catch (error) {
       console.error('Error updating cart item quantity:', error);
     }
