@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://ecommerce-xk3m.onrender.com/api/users';
+const API_BASE_URL = 'https://ecommerce-lac-iota.vercel.app/api/users';
 
 export const register = async (name, email, password) => {
   const response = await axios.post(`${API_BASE_URL}/register`, {
@@ -21,7 +21,6 @@ export const login = async (email, password) => {
 
 export const logout = () => {
  localStorage.removeItem('authToken');
-
 };
 
 export const isAuthenticated = () => {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getToken } from './auth';
 
-const API_BASE_URL = 'https://ecommerce-xk3m.onrender.com/api';
+const API_BASE_URL = 'https://ecommerce-lac-iota.vercel.app//api';
 
 export const getAllProducts = async () => {
   const response = await axios.get(`${API_BASE_URL}/products`);
