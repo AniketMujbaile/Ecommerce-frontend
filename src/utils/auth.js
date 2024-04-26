@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+//const API_BASE_URL = 'http://localhost:5000/api/users';
 const API_BASE_URL = 'https://ecommerce-lac-iota.vercel.app/api/users';
 
 export const register = async (name, email, password) => {
@@ -21,6 +22,7 @@ export const login = async (email, password) => {
 
 export const logout = () => {
  localStorage.removeItem('authToken');
+
 };
 
 export const isAuthenticated = () => {
