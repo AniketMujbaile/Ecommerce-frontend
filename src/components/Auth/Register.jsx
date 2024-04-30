@@ -6,16 +6,20 @@ const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);  
     try {
       await register(name, email, password);
       navigate('/login');
     } catch (err) {
       console.error(err);
       alert('Error registering user');
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -66,8 +70,9 @@ const Register = () => {
           <button
             type="submit"
             className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            disabled={loading}  
           >
-            Register
+            {loading ? 'Registering...' : 'Register'}
           </button>
         </form>
         <p className="mt-4 text-center">

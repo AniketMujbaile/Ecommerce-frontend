@@ -6,11 +6,13 @@ import { AuthContext } from '../../AuthContext';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);  
   const navigate = useNavigate();
   const { setIsLoggedIn } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); 
     try {
       await login(email, password);
       setIsLoggedIn(true);
@@ -18,6 +20,8 @@ const Login = () => {
     } catch (err) {
       console.error(err);
       alert('Invalid credentials');
+    } finally {
+      setLoading(false);  
     }
   };
 
@@ -55,8 +59,9 @@ const Login = () => {
           <button
             type="submit"
             className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            disabled={loading}  
           >
-            Login
+            {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
         <p className="mt-4 text-center">
